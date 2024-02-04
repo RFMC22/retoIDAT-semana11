@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="principal">
+      <header class="principal-header">
+        <p>BBB</p>
+      </header>
+      <div class="principal-section">
+        <div class="principal-operacion">
+          <p class="titulo">Operaciones sin tarjeta:</p>
+          <a href="#" class="principal-boton">
+            <p class="cobrar">Cobrar giros</p>
+            <p class="dinero">Hasta S/ 500</p>
+            <i></i>
+          </a>
+        </div>
+        <div class="principal-mensaje">
+          <h1>Acerca tu tarjeta BBB al lector sin contacto</h1>
+          <p>y retira S/100 soles o tu monto favorito</p>
+          <div class="principal-img">
+            <img src="img/scan.png" alt="scan card">
+          </div>
+        </div>
+      </div>
+      <footer class="principal-footer">
+        <div class="principal-footer-info">
+          <p><span>Hora: </span> <time datetime="09:00">09:00</time> am</p>
+          <p><span>Cajero: </span>C123456</p>
+          <p><span>Telefono: </span>(01) 123 4567</p>
+        </div>
+        <div class="principal-footer-tipo">
+          <p>Billetes disponibles</p>
+          <p>S/50 S/100</p>
+        </div>
+      </footer>
+    </section>
+    <section class="dni ocultar">
+      <header>
+        <div class="salir one">
+          <a href="/">
+            <img src="img/salir.png" alt="salir">
+            Salir</a>
+        </div>
+      </header>
+      <div class="dni-content">
+        <div class="form">
+          <h2>Ingresa tu número de DNI</h2>
+          <p>para empezar tu sesión</p>
+          <form action="">
+            <div class="input-dni">
+              <input type="password" name="dni" id="dni" placeholder="8 números">
+              <p class="mensaje-error-dni ocultar">dni incorrecto</p>
+            </div>
+            <div>
+              <input type="submit" value="Ingresar" id="botonDNI">
+            </div>
+          </form>
+        </div>
+        <div class="img">
+          <img src="img/dni.png" alt="dni">
+        </div>
+      </div>
+    </section>
+    <section class="tipo-operacion ocultar">
+      <header class="doble-header">
+        <div class="tipo-mensaje">
+          <p>Bienvenido</p>
+          <p class="mensaje">¿Qué operación quieres hacer hoy?</p>
+        </div>
+        <div class="salir two">
+          <a href="/">
+            <img src="img/salir.png" alt="salir">
+            Salir</a>
+        </div>
+      </header>
+      <div class="tipo-operacion-contenedor">
+        <div class="tipo-retiros">
+          <a href="" class="botones">
+            <div class="imgs">
+              <img src="img/retiro.png" alt="efectivo" class="card">
+              <img src="img/corazon.png" alt="like" class="corazon">
+            </div>
+            <p class="retirar">Retirar efectivo</p>
+            <i></i>
+          </a>
+          <a href="" class="botones">
+            <p class="deposit">Consultar saldo</p>
+          </a>
+          <a href="" class="botones"><p class="deposit">Ingresar monto</p></a>
+        </div>
+        <div class="tipo-config">
+          <p>Tu información</p>
+          <div class="config">
+            <a href="">
+              <img src="img/celular.png" alt="">
+              <p>Actualizar celular</p>
+            </a>
+            <a href="">
+              <img src="img/candado.png" alt="">
+              <p>Cambiar clave de 4</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="selecciona-cuenta ocultar">
+      <header class="doble-header">
+        <div class="tipo-mensaje">
+          <p>general</p>
+          <p class="mensaje">Selecciona una de tus cuentas</p>
+        </div>
+        <div class="salir three">
+          <a href="/">Salir</a>
+        </div>
+      </header>
+      <div class="selecciona-tipo-cuenta">
+        <a class="boton-tipo-cuenta">
+          <img src="img/soles.png" alt="">
+          <p>Ahorros Soles</p>
+        </a>
+        <a class="boton-tipo-cuenta">
+          <img src="img/dolares.png" alt="">
+          <p>Ahorros Dólares</p>
+        </a>
+      </div>
+    </section>
+    <section class="selecciona-deposito ocultar">
+      <header class="doble-header">
+        <div class="tipo-mensaje">
+          <p>general</p>
+          <p class="mensaje">Selecciona el tipo de deposito</p>
+        </div>
+        <div class="salir">
+          <a href="/">Cancelar</a>
+        </div>
+      </header>
+      <div class="selecciona-tipo-deposito">
+        <a class="boton-tipo-deposito">
+          <img src="img/usuario.png" alt="">
+          <p>A cuentas de esta tarjeta</p>
+        </a>
+        <a class="boton-tipo-deposito">
+          <img src="img/usuarios.png" alt="">
+          <p>A otras cuentas BBB</p>
+        </a>
+      </div>
+    </section>
+    <section class="selecciona-retiro ocultar">
+      <header class="doble-header">
+        <div class="tipo-mensaje">
+          <p>general</p>
+          <p class="mensaje">Selecciona la moneda a retirar</p>
+        </div>
+        <div class="salir black">
+          <a href="/">Volver</a>
+        </div>
+      </header>
+      <div class="selecciona-retiro-cuenta">
+        <a class="boton-retiro-cuenta">
+          <img src="img/soles.png" alt="">
+          <p>Retirar Soles</p>
+        </a>
+        <a class="boton-retiro-cuenta">
+          <img src="img/dolares.png" alt="">
+          <p>Retirar Dólares</p>
+        </a>
+      </div>
+    </section>
+    <section class="selecciona-moneda-deposito ocultar">
+      <header class="doble-header">
+        <div class="tipo-mensaje">
+          <p>general</p>
+          <p class="mensaje">Selecciona la moneda a depositar</p>
+        </div>
+        <div class="salir">
+          <a href="/">Volver</a>
+        </div>
+      </header>
+      <div class="selecciona-deposito-cuenta">
+        <a class="boton-deposito-cuenta">
+          <img src="img/soles.png" alt="">
+          <p>Depositar Soles</p>
+        </a>
+        <a class="boton-deposito-cuenta">
+          <img src="img/dolares.png" alt="">
+          <p>Depositar Dólares</p>
+        </a>
+      </div>
+    </section>
+    <section class="deposito-recomendacion ocultar">
+      <header class="doble-header">
+        <div class="tipo-mensaje">
+          <p>general</p>
+          <p>Sigue estas recomendaciones</p>
+        </div>
+        <div class="salir">
+          <a href="/">Cancelar</a>
+        </div>
+      </header>
+      <div class="recomendacion-content">
+        <div>
+          <p>Revisa que tus billetes no tengan puntas dobladas</p>
+        </div>
+        <div>
+          <p>Agrupa y alinea tus billetes por la misma cara</p>
+        </div>
+      </div>
+      <a class="boton" href="">Continuar</a>
+    </section>
+    <section class="ingresa-billetes ocultar">
+      <header>
+        <div class="salir">
+          <a href="/">Cancelar</a>
+        </div>
+      </header>
+      <div class="cantidad">
+        <div class="texto">
+          <h3>Ingresa máximo 40 billetes</h3>
+          <p>por vez y presiona cerrar ranura</p>
+          <a href="">Cerrar ranura en 20</a>
+        </div>
+        <div>
+          <img src="img/cajero.png" alt="cajero">
+        </div>
+      </div>
+    </section>
+    <section class="confirma-monto-deposito ocultar">
+      <div class="monto-deposito-content">
+        <h3>Total ingresado hasta ahora:</h3>
+        <p class="cantidad">S/ 50</p>
+        <div class="tabla">
+          <p>Conformado por 1 billetes de: </p>
+          <table>
+            <colgroup>
+              <col>
+              <col>
+              <col>
+            </colgroup>
+            <thead>
+              <tr style="border-bottom: 1px solid rgb(110,128,204);">
+                <th>Denominación</th>
+                <th>Cantidad</th>
+                <th>Monto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>De S/50</td>
+                <td>01</td>
+                <td>S/50</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="botones">
+          <a href="">Agregar billetes</a>
+          <a href="">Confirmar</a>
+        </div>
+      </div>
+    </section>
+    <section class="seleccion-monto ocultar">
+      <header class="doble-header">
+        <div class="tipo-mensaje">
+          <p class="black">general</p>
+          <p class="mensaje black">Ingresa o selecciona el monto a retirar</p>
+        </div>
+        <div class="salir black">
+          <a class="black" href="/">Volver</a>
+        </div>
+      </header>
+      <div class="seleccion-monto-mensaje">
+        <div class="billetes-disponibles">
+          <p>Billetes disponibles aquí:</p>
+          <p>S/50 S/100</p>
+        </div>
+        <div class="tiempo">
+          <p class="green">6 am a 10 pm hasta s/ 3,000</p>
+          <p class="normal">10 pm a 6 pm hasta s/ 500</p>
+        </div>
+      </div>
+      <form class="ingresar-monto">
+        <div class="ingresa">
+          <p class="titulo">Ingresar monto</p>
+          <div class="monto">
+            <p class="moneda">S/</p>
+            <input type="text" name="monto" id="monto" class="monto-input" placeholder="0">
+          </div>
+          <p class="mensaje-error-saldo ocultar">Saldo insuficiente</p>
+          <div><input type="submit" value="Confirmar" class="button"></div>
+        </div>
+        <div class="cantidad">
+          <input class="boton"  type="button" value="S/ 20" data-valor="20">
+          <input class="boton" type="button" value="S/ 50" data-valor="50">
+          <input class="boton" type="button" value="S/ 100" data-valor="100">
+          <input class="boton" type="button" value="S/ 150" data-valor="150">
+        </div>
+      </form>
+      <div class="saldo-disponible">
+        <div class="saldo-contenido">
+          <p class="titulo">Cuenta:</p>
+          <p class="sub-titulo">Ahorros Soles S/</p>
+        </div>
+        <div class="saldo-contenido">
+          <p class="titulo">Saldo disponible:</p>
+          <input class="sub-titulo" type="password" name="saldo" id="saldo" onmousedown="return false;"/>
+        </div>
+        <button>
+          <img src="img/ojo.png" alt="">
+          <p class="texto-ver-saldo">Ver saldo</p>
+        </button>
+      </div>
+    </section>
+    <section class="agregar-monto ocultar">
+      <header class="doble-header">
+        <div class="tipo-mensaje">
+          <p class="black">general</p>
+          <p class="mensaje black">Ingresa o selecciona el monto a agregar</p>
+        </div>
+        <div class="salir black">
+          <a class="black" href="/">Volver</a>
+        </div>
+      </header>
+      <div class="seleccion-monto-mensaje">
+        <div class="billetes-disponibles">
+          <p>Billetes disponibles aquí:</p>
+          <p>S/50 S/100</p>
+        </div>
+        <div class="tiempo">
+          <p class="green">6 am a 10 pm hasta s/ 3,000</p>
+          <p class="normal">10 pm a 6 pm hasta s/ 500</p>
+        </div>
+      </div>
+      <form class="agregar-ingresar-monto">
+        <div class="ingresa">
+          <p class="titulo">Ingresar monto</p>
+          <div class="monto">
+            <p class="moneda">S/</p>
+            <input type="text" name="monto" id="montoA" class="monto-input" placeholder="0">
+          </div>
+          <p class="mensaje-error-saldo ocultar">Saldo insuficiente</p>
+          <div><input type="submit" value="Confirmar" class="button"></div>
+        </div>
+        <div class="cantidad">
+          <input class="boton"  type="button" value="S/ 20" data-valor="20">
+          <input class="boton" type="button" value="S/ 50" data-valor="50">
+          <input class="boton" type="button" value="S/ 100" data-valor="100">
+          <input class="boton" type="button" value="S/ 150" data-valor="150">
+        </div>
+      </form>
+      <div class="saldo-disponible">
+        <div class="saldo-contenido">
+          <p class="titulo">Cuenta:</p>
+          <p class="sub-titulo">Ahorros Soles S/</p>
+        </div>
+        <div class="saldo-contenido">
+          <p class="titulo">Saldo disponible:</p>
+          <input class="sub-titulo" type="password" name="saldo" id="saldoA" onmousedown="return false;"/>
+        </div>
+        <button>
+          <img src="img/ojo.png" alt="">
+          <p class="texto-ver-saldo">Ver saldo</p>
+        </button>
+      </div>
+    </section>
+    <section class="detalle-retiro ocultar">
+      <header class="detalle-retiro-header">
+        <h3>Revisa el detalle de tu retiro</h3>
+        <p>No olvides recoger tu tarjeta al finalizar</p>
+      </header>
+      <div class="detalle-contenido-voucher">
+        <div class="voucher">
+          <div class="info">
+            <p>02 de febrero, 12.00 pm</p>
+            <p>Cajero: 111111</p>
+          </div>
+          <div class="monto">
+            <p>Monto en soles a retirar:</p>
+            <p>S/ <span>20</span></p>
+          </div>
+          <div class="tipo-cuenta">
+            <p>Cuenta origen:</p>
+            <p>Ahorros Soles S/</p>
+          </div>
+          <button>Imprimir voucher</button>
+        </div>
+        <div class="button-s-saldo">
+          <a href="">Retirar y ver saldo</a>
+        </div>
+      </div>
+    </section>
+    <section class="ver-saldo-actual ocultar">
+      <header>
+        <div class="salir four">
+          <a href="/">
+            <img src="img/salir.png" alt="salir">
+            Salir</a>
+        </div>
+      </header>
+      <div class="saldo-disponibles">
+        <div class="saldo-contenido">
+          <p class="titulo">Cuenta:</p>
+          <p class="sub-titulo">Ahorros Soles S/</p>
+        </div>
+        <div class="saldo-contenido">
+          <p class="titulo">Saldo disponible:</p>
+          <input class="sub-titulo" type="password" name="saldo" id="saldoM" onmousedown="return false;"/>
+        </div>
+        <button>
+          <img src="img/ojo.png" alt="">
+          <p class="texto-ver-saldo">Ver saldo</p>
+        </button>
+      </div>
+      <div class="final-pass">
+        <button>Continuar</button>
+      </div>
+    </section>
+    <section class="clave ocultar">
+      <div class="clave-content">
+        <div class="form">
+          <h2>Ingresa tu clave</h2>
+          <p>para confirmar tu retiro</p>
+          <form action="" class="claveF">
+            <div class="input-clave">
+              <img src="img/candado.png" alt="">
+              <input type="password" name="" id="clave" placeholder="4 números">
+            </div>
+          </form>
+        </div>
+        <div class="img">
+          <img src="img/clave.png" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="mensaje-final ocultar">
+      <h3>Operacion exitosa</h3>
+    </section>
+    <div class="loader-espera ocultar">
+      Espere un momento por favor
+      <i></i>
+    </div>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

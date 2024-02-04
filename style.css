@@ -1,0 +1,788 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+button,
+input[type="button"],
+input[type="submit"],
+a,
+.principal-img {
+  cursor: pointer;
+}
+
+body {
+  background-color: rgb(10, 10, 10);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+  max-width: 1100px;
+  height: 650px;
+  background-color: rgb(14,7,177);
+  margin: 30px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+main:not(.blanco):before{
+  content: '';
+  width: 1000px;
+  height: 1000px;
+  border-radius: 20% 80% 70% 30% / 30% 35% 65% 70%;
+  background-color: rgb(24,21,158);
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+
+.blanco{
+  background-color: #f1f1f1;
+}
+
+.principal,
+.dni,
+.tipo-operacion,
+.selecciona-cuenta,
+.selecciona-deposito,
+.selecciona-retiro,
+.selecciona-moneda-deposito,
+.seleccion-monto,
+.detalle-retiro,
+.clave,
+.mensaje-final,
+.deposito-recomendacion,
+.ingresa-billetes,
+.confirma-monto-deposito,
+.ver-saldo-actual,
+.agregar-monto {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  padding: 2rem;
+}
+.principal-header,
+.dni header,
+.ingresa-billetes header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 3rem;
+}
+.doble-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.principal-section,
+.dni-content,
+.clave-content{
+  display: flex;
+  height: 480px;
+}
+.principal-section .principal-operacion{
+  padding: 6rem 2rem 6rem 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.458);
+}
+.principal-section .principal-operacion .principal-boton{
+  width: 100%;
+  background-color: #fff;
+  border-radius: 1rem;
+  display: block;
+  padding: 1.5rem 6rem 1.5rem 1.5rem;
+  color: rgb(24,21,158);
+}
+.cobrar{
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.dinero{
+  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.principal-boton i,
+.botones i{
+  width: 2rem;
+  height: 3px;
+  display: block;
+  background-color: rgb(24,21,158);
+}
+.principal-section .principal-operacion .titulo{
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.principal-section .principal-mensaje{
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.principal-img{
+  background: linear-gradient(24deg, rgba(5,54,228,1) 18%, rgba(26,37,139,1) 54%);
+  border-radius: 1rem;
+  width: 7rem;
+  box-shadow: -2px 2px 7px #00000076;
+  margin: 7rem auto 0 auto;
+}
+.principal-mensaje img{
+  width: 6rem;
+  filter: invert(1);
+}
+
+.principal-footer{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+.principal-footer-info,
+.principal-footer-tipo,
+.dni-content .form,
+.dni-content .img
+.clave-content .form,
+.clave-content .img{
+  flex: 1;
+  padding: 2rem;
+}
+.tipo-retiros,
+.tipo-config{
+  flex: 1;
+}
+.principal-footer-info{
+  background-color: rgb(1,0,196);
+}
+.principal-footer-tipo{
+  background-color: rgb(1,78,189);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.loader-espera{
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 16rem 2.5rem;
+  width: 500px;
+}
+.loader-espera i{
+  width: 4rem;
+  height: 3px;
+  display: block;
+  background-color: #fff;
+  margin-top: 2rem;
+}
+
+.salir{
+  width: 120px;
+  border-radius: 4rem;
+  border: 1px solid #fff;
+  padding: 0.5rem 0;
+}
+.salir img{
+  width: 1.5rem;
+  filter: invert(1);
+}
+.salir a{
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center
+}
+
+.ocultar{
+  display: none;
+}
+
+.dni-content .form h2,
+.clave-content .form h2{
+  font-size: 2.7rem;
+}
+.dni-content .form p,
+.clave-content .form p{
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.dni-content .form form input[type="password"],
+.clave-content .form form input[type="password"]{
+  background: none;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  width: 300px;
+  border: 2px solid #fff;
+  outline: none;
+}
+.dni-content .form form input[type="password"]::placeholder,
+.clave-content .form form input[type="password"]::placeholder{
+  color: rgb(110,128,204);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.input-dni {
+  margin-bottom: 3rem;
+}
+.dni-content .form form input[type="submit"] {
+  background: rgb(255,120,0);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  width: 200px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dni-content .img img {
+  position: absolute;
+  bottom: 0;
+  width: 600px;
+  transform: rotateY(180deg);
+  right: 30px;
+}
+
+.tipo-mensaje{
+  font-weight: 600;
+}
+.tipo-mensaje .mensaje{
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.tipo-operacion-contenedor{
+  display: flex;
+  gap: 2rem;
+}
+
+.tipo-retiros{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+  height: 260px;
+}
+.tipo-retiros .botones:first-child{
+  grid-column: 1/2;
+  grid-row: 1/5;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+.tipo-retiros .botones:nth-child(2){
+  background-color: rgb(255,120,0);
+  border-radius: 1rem;
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+.tipo-retiros .botones:last-child{
+  background-color: rgb(255,120,0);
+  border-radius: 1rem;
+  grid-column: 2/3;
+  grid-row: 3/5;
+}
+
+.tipo-retiros .botones{
+  padding: 2rem;
+}
+.botones .imgs{
+  position: relative;
+  width: 60px;
+  margin-bottom: 1.5rem;
+}
+.botones .imgs .card{
+  width: 60px;
+  filter: brightness(0) saturate(100%) invert(10%) sepia(94%) saturate(3047%) hue-rotate(239deg) brightness(113%) contrast(116%);
+}
+.botones .imgs .corazon{
+  width: 20px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  filter: invert(75%) sepia(44%) saturate(7296%) hue-rotate(351deg) brightness(101%) contrast(98%);
+}
+.botones .retirar {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: rgb(24,21,158);
+}
+.botones .deposit{
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fff;
+}
+.tipo-config{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.423);
+}
+.tipo-config .config{
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.tipo-config .config a{
+  margin-top: 1rem;
+  flex: 1;
+  border: 1px solid #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.tipo-config .config a img{
+  width: 30px;
+  filter: invert(1);
+}
+.tipo-config .config a p{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.selecciona-tipo-cuenta,
+.selecciona-retiro-cuenta,
+.selecciona-tipo-deposito,
+.selecciona-deposito-cuenta{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5rem;
+}
+.boton-tipo-cuenta,
+.boton-retiro-cuenta,
+.boton-deposito-cuenta,
+.boton-tipo-deposito{
+  width: 300px;
+  height: 300px;
+  padding: 2rem;
+  background-color:rgb(255,120,0);
+  border-radius: 1rem;
+}
+.boton-tipo-cuenta img,
+.boton-tipo-deposito img,
+.boton-deposito-cuenta img,
+.boton-retiro-cuenta img{
+  width: 80px;
+  filter: invert(1);
+  margin-bottom: 2rem;
+}
+.boton-tipo-cuenta p,
+.boton-tipo-deposito p,
+.boton-deposito-cuenta p,
+.boton-retiro-cuenta p{
+  font-size: 2rem;
+  font-weight: 500;
+  padding-right: 5rem;
+}
+
+.black{
+  color: #000 !important;
+  border-color: #000;
+}
+
+.seleccion-monto-mensaje{
+  display: flex;
+  margin: auto;
+  width: 500px;
+}
+.billetes-disponibles,
+.tiempo{
+  flex: 1;
+  padding: 0.6rem;
+}
+.billetes-disponibles{
+  border-right: 1px solid #a7a7a789;
+}
+.billetes-disponibles p{
+  color: rgb(1,0,196);
+}
+.green{
+  color: rgb(46, 150, 126);
+}
+.normal{
+  color: #000;
+}
+.ingresar-monto,
+.agregar-ingresar-monto{
+  display: flex;
+  margin: auto;
+  width: 800px;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 50px;
+}
+.ingresar-monto .ingresa,
+.agregar-ingresar-monto .ingresa{
+  flex: 1;
+}
+.ingresar-monto .ingresa .titulo,
+.agregar-ingresar-monto .ingresa .titulo{
+  color: #000;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.ingresar-monto .ingresa .monto,
+.agregar-ingresar-monto .ingresa .monto{
+  position: relative;
+  border: 1px solid rgb(1,0,196);
+  border-radius: 1rem;
+  padding: 0 1rem 0 3rem;
+  margin-bottom: 2rem;
+}
+.ingresar-monto .cantidad,
+.agregar-ingresar-monto .cantidad{
+  flex: 1;
+}
+.monto-input{
+  width: 100%;
+  height: 60px;
+  background: none;
+  border: none;
+  outline: none;
+}
+.monto-input::placeholder{
+  color: rgb(110,128,204);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.monto .moneda{
+  position: absolute;
+  color: rgb(110,128,204);
+  left: 1.5rem;
+  font-weight: 500;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+}
+.ingresa div .button{
+  width: 100%;
+  border-radius: 4rem;
+  border: none;
+  outline: none;
+  padding: 1.5rem;
+  background-color: rgb(255,120,0);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.ingresar-monto .cantidad,
+.agregar-ingresar-monto .cantidad{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  row-gap: 1rem;
+  justify-content: space-between;
+}
+.ingresar-monto .cantidad .boton,
+.agregar-ingresar-monto .boton{
+  max-width: 180px;
+  width: 100%;
+  height: 100px;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  background-color: rgb(1,0,196);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.saldo-disponible,
+.saldo-disponibles{
+  margin: auto;
+  width: 500px;
+  border: 1px solid rgba(110, 127, 204, 0.308);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.saldo-contenido .titulo{
+  color: rgb(110,128,204);
+}
+.saldo-contenido .sub-titulo{
+  color: rgb(59, 67, 105);
+  background: none;
+  outline: none;
+  border: none;
+}
+.saldo-contenido:nth-child(2) .sub-titulo{
+  font-size: 2rem;
+  width: 120px;
+}
+.saldo-disponible button,
+.saldo-disponibles button{
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(110,128,204);
+  color: rgb(110,128,204);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.saldo-disponible img,
+.saldo-disponibles img{
+  width: 20px;
+  filter: invert(63%) sepia(27%) saturate(7465%) hue-rotate(351deg) brightness(103%) contrast(98%);
+}
+.detalle-retiro-header{
+  color: #000;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+.detalle-retiro-header h3{
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.detalle-contenido-voucher{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+  margin: auto;
+  gap: 2rem;
+}
+.voucher{
+  background-color: #fff;
+  border-radius: 3px;
+  flex: 1;
+  padding: 2rem;
+}
+.voucher .info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(68, 79, 128);
+  margin-bottom: 2.5rem;
+}
+.voucher .monto{
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.voucher .monto p:nth-child(1){
+  color: rgb(68, 79, 128);
+  margin-bottom: 1rem;
+}
+.voucher .monto p:nth-child(2){
+  font-weight: 600;
+  color: rgb(1,0,196);
+  font-size: 2.5rem;
+}
+.voucher .tipo-cuenta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(68, 79, 128);
+  margin-bottom: 8rem;
+}
+.voucher button {
+  padding: 0.5rem 4rem;
+  border-radius: 3rem;
+  border: 1px solid rgb(110,128,204);
+  outline: none;
+  margin: auto;
+  display: block;
+  color: rgb(110,128,204);
+  background: none;
+}
+.button-s-saldo a{
+  border: 1px solid rgb(1,0,196);
+  color: rgb(1,0,196);
+  background: #fff;
+  font-size: 2rem;
+  width: 250px;
+  display: block;
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.input-clave{
+  position: relative;
+}
+.input-clave img {
+  width: 20px;
+  filter: invert(1);
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input-clave input[type="password"]{
+  padding-right: 3rem !important;
+}
+.clave-content{
+  align-items: center;
+}
+.clave-content .img img {
+  position: absolute;
+  bottom: 0;
+  width: 600px;
+  right: 0px;
+}
+.mensaje-final {
+  text-align: center;
+  margin-top: 15rem;
+  font-size: 5rem;
+}
+.recomendacion-content{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15rem;
+  margin-bottom: 4rem;
+}
+.recomendacion-content div{
+  flex: 1;
+}
+.recomendacion-content div p{
+  text-align: center;
+}
+.deposito-recomendacion .boton{
+  background-color: rgb(255,120,0);
+  border-color: rgb(255,120,0);
+  padding: 1rem 6rem;
+  border-radius: 2rem;
+  width: 250px;
+  margin: auto;
+  display: block;
+  color: #fff;
+}
+
+.ingresa-billetes .cantidad{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10rem;
+}
+.ingresa-billetes .cantidad .texto h3{
+  font-size: 2.5rem;
+}
+.ingresa-billetes .cantidad .texto p{
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.ingresa-billetes .cantidad .texto a{
+  background-color: rgb(255,120,0);
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  color: #fff;
+}
+.ingresa-billetes .cantidad img{
+  filter: invert(1);
+}
+.monto-deposito-content{
+  width: 800px;
+  margin: 5rem auto;
+}
+.monto-deposito-content h3{
+  font-size: 2rem;
+  color: rgb(110,128,204);
+  margin-bottom: 1rem;
+}
+.monto-deposito-content .cantidad{
+  font-size: 3rem;
+  color: rgb(110,128,204);
+  margin-bottom: 2rem;
+}
+
+.monto-deposito-content .tabla{
+  border: 1px solid rgb(110,128,204);
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem 0;
+}
+.monto-deposito-content .tabla p{
+  text-align: center;
+  color: rgb(10, 10, 10);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.monto-deposito-content .tabla table{
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+col{
+  width: 33.33%;
+}
+td {
+  text-align: center;
+  padding: 0.5rem;
+  color: rgb(59, 67, 105);
+}
+tr th{
+  color: rgb(110,128,204);
+  padding: 0.5rem;
+}
+.monto-deposito-content .botones{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 1.5rem;
+}
+.monto-deposito-content .botones a{
+  display: block;
+  flex: 1;
+}
+.monto-deposito-content .botones a:nth-child(1){
+  border: 1px solid rgb(110,128,204);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  color: rgb(110,128,204);
+  font-size: 1.6rem;
+}
+.monto-deposito-content .botones a:nth-child(2){
+  background-color:  rgb(255,120,0);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  color: #fff;
+  font-size: 1.6rem;
+}
+.mensaje-error-dni,
+.mensaje-error-saldo{
+  font-size: 1rem !important;
+  margin-top: 1rem;
+  color: rgb(255, 0, 72);
+  padding-left: 0.5rem;
+}
+.mensaje-error-saldo{
+  margin-bottom: 1rem;
+}
+
+.ver-saldo-actual .saldo-disponibles{
+  margin-top: 14rem;
+}
+.four{
+  border-color: #000;
+}
+.four a{
+  color: #000;
+}
+.four a img{
+  filter: invert(0);
+}
+.final-pass{
+  width: 300px;
+  margin: auto;
+  margin-top: 1rem;
+}
+.final-pass button{
+  width: 100%;
+  background-color: rgb(255,120,0);
+  border: none;
+  outline: none;
+  padding: 1rem;
+  border-radius: 2rem;
+  color: #fff;
+}
